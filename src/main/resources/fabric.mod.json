@@ -16,19 +16,19 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "me.xmrvizzy.skyblocker.SkyblockerMod"
+      "de.hysky.skyblocker.SkyblockerMod"
     ],
     "preLaunch": [
       "dev.cbyrne.betterinject.BetterInject::initialize"
     ],
     "modmenu": [
-      "me.xmrvizzy.skyblocker.compatibility.modmenu.ModMenuEntry"
+      "de.hysky.skyblocker.compatibility.modmenu.ModMenuEntry"
     ],
     "rei_client": [
-      "me.xmrvizzy.skyblocker.compatibility.rei.SkyblockerREIClientPlugin"
+      "de.hysky.skyblocker.compatibility.rei.SkyblockerREIClientPlugin"
     ],
     "emi": [
-      "me.xmrvizzy.skyblocker.compatibility.emi.SkyblockerEMIPlugin"
+      "de.hysky.skyblocker.compatibility.emi.SkyblockerEMIPlugin"
     ]
   },
   "mixins": [
@@ -37,8 +37,8 @@
   "depends": {
     "fabricloader": ">=0.14.21",
     "fabric-api": ">=0.86.0",
-    "cloth-config2": "*",
-    "minecraft": "~1.20"
+    "yet_another_config_lib_v3": ">=3.1.0+1.20",
+    "minecraft": "~1.20 <1.20.2"
   },
   "conflicts": {
     "immediatelyfast": "<=1.1.26+1.20.1"
