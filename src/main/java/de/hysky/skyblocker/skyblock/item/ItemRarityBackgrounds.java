@@ -8,6 +8,7 @@ import de.hysky.skyblocker.utils.ItemUtils;
 import de.hysky.skyblocker.utils.Utils;
 import de.hysky.skyblocker.utils.scheduler.Scheduler;
 import it.unimi.dsi.fastutil.ints.Int2ReferenceOpenHashMap;
+import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -16,6 +17,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
 import java.util.Arrays;
@@ -50,6 +52,15 @@ public class ItemRarityBackgrounds {
 			
 			if (Utils.isOnSkyblock() && (title.equals("The Hex") || title.equals("Craft Item") || title.equals("Anvil") || title.equals("Reforge Anvil"))) {
 				ScreenEvents.remove(screen).register(screen1 -> CACHE.clear());
+			}
+		});
+
+		//Clear cache after math hoe rarity upgrade message
+		ClientReceiveMessageEvents.GAME.register((text, overlay) -> {
+			String stripped = Formatting.strip(text.getString());
+
+			if (stripped.matches("Your (.+) was upgraded from [A-Z]+ to [A-Z]+!")) {
+				CACHE.clear();
 			}
 		});
 	}
