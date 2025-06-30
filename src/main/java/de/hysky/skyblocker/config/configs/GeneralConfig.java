@@ -272,6 +272,9 @@ public class GeneralConfig {
 
     public static class Hitbox {
         @SerialEntry
+        public boolean oldCactusHitbox = false;
+
+        @SerialEntry
         public boolean oldFarmlandHitbox = false;
 
         @SerialEntry
