@@ -46,13 +46,6 @@ public class FarmingCategory {
 								.controller(ConfigUtils.createEnumController())
 								.build())
 						.option(Option.<Boolean>createBuilder()
-								.name(Component.translatable("skyblocker.config.farming.garden.dicerTitlePrevent"))
-								.binding(defaults.farming.garden.dicerTitlePrevent,
-										() -> config.farming.garden.dicerTitlePrevent,
-										newValue -> config.farming.garden.dicerTitlePrevent = newValue)
-								.controller(ConfigUtils.createBooleanController())
-								.build())
-						.option(Option.<Boolean>createBuilder()
 								.name(Component.translatable("skyblocker.config.farming.garden.pestHighlighter"))
 								.description(Component.translatable("skyblocker.config.farming.garden.pestHighlighter.@Tooltip"))
 								.binding(defaults.farming.garden.pestHighlighter,

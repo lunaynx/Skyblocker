@@ -130,11 +130,4 @@ public abstract class GuiMixin {
 
 		return cooldownProgress;
 	}
-
-	@Inject(method = "setTitle", at = @At("HEAD"), cancellable = true)
-	private void skyblocker$dicerTitlePrevent(Component title, CallbackInfo ci) {
-		if (Utils.isOnSkyblock() && SkyblockerConfigManager.get().farming.garden.dicerTitlePrevent && title != null && DICER_TITLE_BLACKLIST.matcher(title.getString()).matches()) {
-			ci.cancel();
-		}
-	}
 }

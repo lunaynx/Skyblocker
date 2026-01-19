@@ -10,6 +10,7 @@ public class FarmingConfig {
 	public static class Garden {
 		public FarmingHud farmingHud = new FarmingHud();
 
+		@Deprecated
 		public boolean dicerTitlePrevent = true;
 
 		public boolean pestHighlighter = true;
